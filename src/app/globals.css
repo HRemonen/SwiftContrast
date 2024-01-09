@@ -10,9 +10,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-color: #030303;
-    --background-style: radial-gradient(#e6e6e6 0.8px, transparent 0),
-      radial-gradient(#e6e6e6 0.8px, #030303 0);
+    --foreground-color: #1f2028;
+    --background-style: radial-gradient(#2e3039 0.8px, transparent 0),
+      radial-gradient(#2e3039 0.8px, #1f2028 0);
   }
 }
 
