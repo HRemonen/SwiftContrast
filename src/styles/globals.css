@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --text-color: black;
   --foreground-color: #fcfcfc;
   --background-style: radial-gradient(#e6e6e6 0.8px, transparent 0),
     radial-gradient(#e6e6e6 0.8px, #fcfcfc 0);
@@ -10,6 +11,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --text-color: white;
     --foreground-color: #1f2028;
     --background-style: radial-gradient(#2e3039 0.8px, transparent 0),
       radial-gradient(#2e3039 0.8px, #1f2028 0);
@@ -17,6 +19,7 @@
 }
 
 body {
+  color: var(--text-color);
   background-color: var(--background-color);
   background-image: var(--background-style);
   background-position:
@@ -24,4 +27,15 @@ body {
     16px 16px;
   background-size: 32px 32px;
   opacity: 1;
+}
+
+.visually-hidden,
+.sr-only {
+  /* hides content except when viewed by screen readers */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
