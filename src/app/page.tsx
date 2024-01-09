@@ -1,5 +1,5 @@
 export default function Home() {
   return (
-    <main className="bg-white bg-[radial-gradient(#e6e6e6 .8px, transparent 0), radial-gradient(#e6e6e6 .8px, #fcfcfc 0)]"></main>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
   );
 }
