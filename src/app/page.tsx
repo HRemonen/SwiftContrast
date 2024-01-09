@@ -1,5 +1,5 @@
-import Navbar from "@/components/Navbar/Navbar";
-import SkipLink from "@/components/SkipLink";
+import Navbar from "@/components/navbar/Navbar";
+import SkipLink from "@/components/common/SkipLink";
 
 export default function Home() {
   return (
