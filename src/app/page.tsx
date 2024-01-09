@@ -1,12 +1,14 @@
+import Navbar from "@/components/Navbar/Navbar";
 import SkipLink from "@/components/SkipLink";
 
 export default function Home() {
   return (
-    <main
-      id="main"
-      className="flex min-h-screen flex-col items-center justify-between p-24"
-    >
+    <>
+      <Navbar />
       <SkipLink />
-    </main>
+      <main id="main" className="min-h-screen p-24">
+        asdfasdf
+      </main>
+    </>
   );
 }
