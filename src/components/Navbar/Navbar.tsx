@@ -1,3 +1,5 @@
+import DarkModeToggle from "../DarkModeToggle";
+
 const Navbar = () => {
   return (
     <header>
@@ -9,6 +11,9 @@ const Navbar = () => {
           >
             <h1>Swift Contrast</h1>
           </a>
+        </div>
+        <div className="flex items-center justify-center">
+          <DarkModeToggle />
         </div>
       </nav>
     </header>

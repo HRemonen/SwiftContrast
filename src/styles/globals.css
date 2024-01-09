@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --text-color: black;
-  --foreground-color: #fcfcfc;
-  --background-style: radial-gradient(#e6e6e6 0.8px, transparent 0),
-    radial-gradient(#e6e6e6 0.8px, #fcfcfc 0);
-}
+@layer utilities {
+  /* Light Mode */
+  .light {
+    --text-color: black;
+    --foreground-color: #fcfcfc;
+    --background-style: radial-gradient(#e6e6e6 0.8px, transparent 0),
+      radial-gradient(#e6e6e6 0.8px, #fcfcfc 0);
+  }
+  /* Dark Mode */
 
-@media (prefers-color-scheme: dark) {
-  :root {
+  .dark {
     --text-color: white;
     --foreground-color: #1f2028;
     --background-style: radial-gradient(#2e3039 0.8px, transparent 0),
