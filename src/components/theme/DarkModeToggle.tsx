@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
 
   return (
     <ToggleButton
-      className="border-gray-400 hover:border-gray-200 focus:border-gray-200 dark:border-gray-200 dark:hover:border-gray-400 dark:focus:border-gray-400 inline-flex h-14 items-center justify-center overflow-hidden rounded-full border-2 p-1 transition focus:outline-none w-14"
+      className="border-orange-400 hover:border-orange-200 focus:border-orange-200 dark:border-cyan-200 dark:hover:border-cyan-400 dark:focus:border-cyan-400 inline-flex h-14 items-center justify-center overflow-hidden rounded-full border-2 p-1 transition focus:outline-none w-14"
       onChange={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
     >
       {Icon}
