@@ -9,7 +9,8 @@ import { RiMoonLine, RiSunLine } from "react-icons/ri";
 const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
 
-  const Icon = theme === "light" ? <RiMoonLine /> : <RiSunLine />;
+  const Icon =
+    theme === "light" ? <RiMoonLine size={24} /> : <RiSunLine size={24} />;
 
   return (
     <ToggleButton
