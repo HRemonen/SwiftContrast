@@ -23,12 +23,11 @@ const Navbar = () => {
       <SkipLink href="#main"/>
 
       <div id="logo" className="flex justify-center gap-4 align-middle">
-        <Link
+        <p
           className="block whitespace-nowrap text-3xl font-semibold transition focus:outline-none"
-          href="/"
         >
           Swift Contrast
-        </Link>
+        </p>
       </div>
 
       <nav id="primary-nav" aria-label="Primary" className="hidden lg:block">
