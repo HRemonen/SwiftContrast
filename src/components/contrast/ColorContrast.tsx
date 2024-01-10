@@ -13,9 +13,9 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
     <label className="sr-only capitalize" htmlFor={id}>
       {label}
     </label>
-    <div className="flex p-1 border-1 dark:bg-gray-50 dark:bg-opacity-15 rounded-md dark:border-gray-300">
+    <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full lg:w-[400px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
       <input
-        className="h-10 p-2 mr-2 border-1 border-gray-300 rounded-md"
+        className="h-10 p-2 mr-2 border-1 w-[100%] border-gray-300 rounded-md"
         id={id}
         type="text"
         value={color}
@@ -38,9 +38,9 @@ const ColorContrast = () => {
 
   return (
     <section id="color-contrast" className="mt-8 lg:mt-12">
-      <div className="px-4 lg:px-24 mx-auto flex max-w-8xl items-center justify-between">
-        <div className="block justify-center">
-          <h2 className="mb-4 block whitespace-nowrap text-2xl font-semibold text-left">
+      <div className="px-2 lg:px-24 lg:mx-auto block lg:flex max-w-8xl items-center lg:justify-between">
+        <div className="mb-8 mx-8 lg:mx-0 lg:mb-0 block justify-center">
+          <h2 className="mb-2 lg:mb-4 block whitespace-nowrap text-md lg:text-2xl font-semibold text-left">
             Set Text Color
           </h2>
           <ColorPicker
@@ -50,8 +50,8 @@ const ColorContrast = () => {
             onChange={setTextColor}
           />
         </div>
-        <div className="block justify-center">
-          <h2 className="mb-4 block whitespace-nowrap text-2xl font-semibold text-left">
+        <div className="mb-8 mx-8 lg:mx-0 lg:mb-0 block justify-center">
+          <h2 className="mb-2 lg:mb-4 block whitespace-nowrap text-md lg:text-2xl font-semibold text-left">
             Set Background Color
           </h2>
           <ColorPicker
