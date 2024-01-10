@@ -8,7 +8,7 @@ interface ColorPickerProps {
   onChange: (color: string) => void;
 }
 
-const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
+const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => (
   <div className="flex flex-col">
     <label className="sr-only capitalize" htmlFor={id}>
       {label}
@@ -32,6 +32,15 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
   </div>
 );
 
+const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
+  <div className="mb-8 mx-8 lg:mx-0 lg:mb-0 block justify-center">
+    <h2 className="mb-2 lg:mb-4 block capitalize whitespace-nowrap text-md lg:text-2xl font-semibold text-left">
+      Set {label}
+    </h2>
+    <ColorPickerInput id={id} label={label} color={color} onChange={onChange} />
+  </div>
+);
+
 const ColorContrast = () => {
   const [textColor, setTextColor] = useState("#000000");
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
@@ -39,28 +48,19 @@ const ColorContrast = () => {
   return (
     <section id="color-contrast" className="mt-8 lg:mt-12">
       <div className="px-2 lg:px-24 lg:mx-auto block lg:flex max-w-8xl items-center lg:justify-between">
-        <div className="mb-8 mx-8 lg:mx-0 lg:mb-0 block justify-center">
-          <h2 className="mb-2 lg:mb-4 block whitespace-nowrap text-md lg:text-2xl font-semibold text-left">
-            Set Text Color
-          </h2>
-          <ColorPicker
-            id="textColor"
-            label="Text color"
-            color={textColor}
-            onChange={setTextColor}
-          />
-        </div>
-        <div className="mb-8 mx-8 lg:mx-0 lg:mb-0 block justify-center">
-          <h2 className="mb-2 lg:mb-4 block whitespace-nowrap text-md lg:text-2xl font-semibold text-left">
-            Set Background Color
-          </h2>
-          <ColorPicker
-            id="backgroundColor"
-            label="Background color"
-            color={backgroundColor}
-            onChange={setBackgroundColor}
-          />
-        </div>
+        <ColorPicker
+          id="textColor"
+          label="Text color"
+          color={textColor}
+          onChange={setTextColor}
+        />
+
+        <ColorPicker
+          id="backgroundColor"
+          label="Background color"
+          color={backgroundColor}
+          onChange={setBackgroundColor}
+        />
       </div>
     </section>
   );
