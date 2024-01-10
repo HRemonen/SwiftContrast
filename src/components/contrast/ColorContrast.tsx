@@ -13,12 +13,22 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
     <label className="sr-only capitalize" htmlFor={id}>
       {label}
     </label>
-    <input
-      id={id}
-      type="color"
-      value={color}
-      onChange={(e) => onChange(e.target.value)}
-    />
+    <div className="flex p-1 border-1 dark:bg-gray-50 dark:bg-opacity-15 rounded-md dark:border-gray-300">
+      <input
+        className="h-10 p-2 mr-2 border-1 border-gray-300 rounded-md"
+        id={id}
+        type="text"
+        value={color}
+        onChange={(e) => onChange(e.target.value)}
+      />
+      <input
+        className="w-10 h-10 border-1 border-gray-300 rounded-md"
+        id={id}
+        type="color"
+        value={color}
+        onChange={(e) => onChange(e.target.value)}
+      />
+    </div>
   </div>
 );
 

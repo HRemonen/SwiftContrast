@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <DarkModeProvider>
           <Navbar />
-          <main id="main" className="min-h-screen p-24">
+          <main id="main" className="p-24">
             {children}
           </main>
         </DarkModeProvider>

@@ -1,10 +1,13 @@
-import Navbar from "@/components/navbar/Navbar";
-import SkipLink from "@/components/common/SkipLink";
+import ColorContrast from "@/components/contrast/ColorContrast";
 
 export default function Home() {
   return (
     <section id="home">
-      <h1>Swift Contrast</h1>
+      <h1 className="block whitespace-nowrap text-3xl font-semibold text-center">
+        Swift Contrast
+      </h1>
+
+      <ColorContrast />
     </section>
   );
 }
