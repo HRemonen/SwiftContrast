@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 
 import { ThemeProvider } from "next-themes";
 import DarkModeProvider from "@/components/theme/DarkModeProvider";
+import Navbar from "@/components/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,12 @@ export default function RootLayout({
   return (
     <html className="dark" lang="en" style={{ colorScheme: "dark" }}>
       <body className={inter.className}>
-        <DarkModeProvider>{children}</DarkModeProvider>
+        <DarkModeProvider>
+          <Navbar />
+          <main id="main" className="min-h-screen p-24">
+            {children}
+          </main>
+        </DarkModeProvider>
       </body>
     </html>
   );

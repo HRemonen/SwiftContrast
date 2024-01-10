@@ -3,12 +3,8 @@ import SkipLink from "@/components/common/SkipLink";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <SkipLink />
-      <main id="main" className="min-h-screen p-24">
-        asdfasdf
-      </main>
-    </>
+    <section id="home">
+      <h1>Swift Contrast</h1>
+    </section>
   );
 }
