@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { ThemeProvider } from "next-themes";
 import DarkModeProvider from "@/components/theme/DarkModeProvider";
 import Navbar from "@/components/navbar/Navbar";
 
