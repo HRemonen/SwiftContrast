@@ -19,13 +19,14 @@ const Navbar = () => {
   ];
 
   return (
-    <header role="banner" className="px-12 py-4 lg:py-8 mx-auto flex max-w-8xl items-center justify-between">
-      <SkipLink href="#main"/>
+    <header
+      role="banner"
+      className="px-4 md:px-8 lg:px-12 py-4 md:py-8 lg:py-8 mx-auto flex items-center justify-between"
+    >
+      <SkipLink href="#main" />
 
       <div id="logo" className="flex justify-center gap-4 align-middle">
-        <p
-          className="block whitespace-nowrap text-3xl font-semibold transition focus:outline-none"
-        >
+        <p className="block whitespace-nowrap text-lg md:text-xl lg:text-3xl font-semibold transition focus:outline-none">
           Swift Contrast
         </p>
       </div>
@@ -34,9 +35,7 @@ const Navbar = () => {
         <ul className="flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.name} className="px-5 py-2">
-              <Link href={item.href}>
-                {item.name}
-              </Link>
+              <Link href={item.href}>{item.name}</Link>
             </li>
           ))}
         </ul>
