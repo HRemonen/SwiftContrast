@@ -16,7 +16,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
     <div className="flex flex-col">
       <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full lg:w-[400px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
         <label className="sr-only" htmlFor={textInputId}>
-          {label} HEX input
+          {label} HEX
         </label>
         <input
           className="h-10 p-2 mr-2 border-1 w-[100%] border-gray-300 rounded-md"
@@ -27,7 +27,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
         />
 
         <label className="sr-only" htmlFor={colorInputId}>
-          {label} color picker
+          {label} picker
         </label>
         <input
           className="w-10 h-10 border-1 border-gray-300 rounded-md"
