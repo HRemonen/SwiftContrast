@@ -15,7 +15,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full md:w-[300px] lg:w-[250px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
+      <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full md:w-full lg:w-[250px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
         <label className="sr-only" htmlFor={textInputId}>
           {label} HEX
         </label>
@@ -43,7 +43,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 };
 
 const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
-  <div className="mx-2 md:mx-8 lg:mx-0 mb-8">
+  <div className="mx-2 md:mx-2 lg:mx-0 mb-8">
     <h2 className="mb-2 lg:mb-4 block capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
       Set {label}
     </h2>
@@ -58,7 +58,7 @@ interface Colors {
 
 const ColorPreview = ({ textColor, backgroundColor }: Colors) => (
   <div
-    className="flex flex-col justify-center items-center mx-2 lg:mx-0 mb-4 md:mb-0 md:order-3 w-full max-w-[600px] h-[200px] lg:h-[400px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
+    className="flex flex-col justify-center items-center mx-2 lg:mx-0 mb-4 md:mb-0 md:order-3 w-full max-w-[600px] h-full min-h-[200px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
     style={{ backgroundColor, color: textColor }}
   >
     <p className="text-center font-semibold text-[18.5px]">
@@ -165,7 +165,7 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   );
 
   return (
-    <div className="mx-2 lg:mx-0 md:pr-2 lg:pr-8">
+    <div className="mx-2 lg:mx-0 lg:pr-8">
       <p className="mb-2 lg:mb-4 capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
         Contrast Ratio: {contrast}:1
       </p>
@@ -200,13 +200,13 @@ const ColorContrast = () => {
   return (
     <section
       id="color-contrast"
-      className="mt-8 lg:mt-12 max-w-[1200px] mx-auto"
+      className="mt-8 lg:mt-12 max-w-[1024px] mx-auto"
     >
       <div className="flex flex-col md:flex-row justify-center items-center lg:justify-normal lg:items-start">
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
 
         <div className="w-full max-w-[600px]">
-          <div className="flex flex-col lg:flex-row lg:space-x-8 md:items-end lg:items-start md:pr-2 lg:pr-8 ">
+          <div className="flex flex-col md:flex-row md:space-x-4 md:pr-2 lg:pr-8 ">
             <ColorPicker
               id="textColor"
               label="Text color"
