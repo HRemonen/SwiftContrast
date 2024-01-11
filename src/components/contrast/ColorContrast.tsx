@@ -15,7 +15,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full lg:w-[400px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
+      <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full md:w-[300px] 2xl:w-[400px] max-w-[400px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
         <label className="sr-only" htmlFor={textInputId}>
           {label} HEX
         </label>
@@ -58,7 +58,7 @@ interface ColorPreviewProps {
 
 const ColorPreview = ({ textColor, backgroundColor }: ColorPreviewProps) => (
   <div
-    className="flex flex-col justify-center items-center mx-8 mb-4 lg:mb-0 lg:mx-0 lg:order-3 lg:p-4 lg:w-[400px] h-[200px] lg:h-[400px] border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
+    className="flex flex-col justify-center items-center mx-8 mb-4 lg:mb-0 lg:mx-0 md:order-3 md:w-full max-w-[600px] h-[200px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
     style={{ backgroundColor, color: textColor }}
   >
     <p className="text-center font-semibold text-2xl">Preview Window</p>
@@ -72,9 +72,9 @@ const ColorContrast = () => {
 
   return (
     <section id="color-contrast" className="mt-8 lg:mt-12">
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col md:flex-row">
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
-        <div className="px-2 lg:px-24 lg:mx-auto block lg:flex max-w-8xl lg:justify-between">
+        <div className="px-2 lg:mx-auto block lg:flex max-w-[800px] lg:justify-between">
           <ColorPicker
             id="textColor"
             label="Text color"
