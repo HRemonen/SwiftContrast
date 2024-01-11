@@ -15,7 +15,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full md:w-[300px] xl:w-[400px] max-w-[600px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
+      <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full md:w-[300px] lg:w-[200px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
         <label className="sr-only" htmlFor={textInputId}>
           {label} HEX
         </label>
@@ -44,7 +44,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 
 const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
   <div className="mx-2 md:mx-8 lg:mx-0 mb-8">
-    <h2 className="mb-2 lg:mb-4 block capitalize whitespace-nowrap text-md lg:text-2xl font-semibold text-left">
+    <h2 className="mb-2 lg:mb-4 block capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
       Set {label}
     </h2>
     <ColorPickerInput id={id} label={label} color={color} onChange={onChange} />
@@ -58,7 +58,7 @@ interface ColorPreviewProps {
 
 const ColorPreview = ({ textColor, backgroundColor }: ColorPreviewProps) => (
   <div
-    className="flex flex-col justify-center items-center mx-2 lg:mx-0 mb-4 md:mb-0 md:order-3 w-full max-w-[600px] h-[200px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
+    className="flex flex-col justify-center items-center mx-2 lg:mx-0 mb-4 md:mb-0 md:order-3 w-full max-w-[600px] h-[200px] lg:h-[400px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
     style={{ backgroundColor, color: textColor }}
   >
     <p className="text-center font-semibold text-2xl">Preview Window</p>
@@ -77,7 +77,7 @@ const ColorContrast = () => {
     >
       <div className="flex flex-col md:flex-row justify-center items-center">
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
-        <div className="flex flex-col md:items-end md:pr-2 lg:pr-8 w-full max-w-[600px]">
+        <div className="flex flex-col lg:flex-row lg:space-x-8 md:items-end lg:items-start md:pr-2 lg:pr-8 w-full max-w-[600px]">
           <ColorPicker
             id="textColor"
             label="Text color"
