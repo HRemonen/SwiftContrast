@@ -113,8 +113,25 @@ const calculateRGBsContrast = (text: string, background: string) => {
   return contrast;
 };
 
+const calculateWCAGConformance = (contrast: number) => {
+  const thresholds = {
+    AA: { normal: 4.5, large: 3.0, components: 3.0 },
+    AAA: { normal: 7.0, large: 4.5 },
+  };
+
+  return Object.entries(thresholds).flatMap(([level, types]) =>
+    Object.entries(types).map(([type, threshold]) => ({
+      level: `${level} ${type}`,
+      passed: contrast >= threshold,
+    })),
+  );
+};
+
 const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   const contrast = calculateRGBsContrast(textColor, backgroundColor);
+  const conformance = calculateWCAGConformance(contrast);
+
+  console.log(conformance);
 
   return (
     <div>
