@@ -15,7 +15,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full md:w-[300px] 2xl:w-[400px] max-w-[400px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
+      <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full md:w-[300px] xl:w-[400px] max-w-[600px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
         <label className="sr-only" htmlFor={textInputId}>
           {label} HEX
         </label>
@@ -43,7 +43,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 };
 
 const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
-  <div className="mb-8 mx-8 lg:mx-0 lg:mb-0 block justify-center">
+  <div className="mx-2 md:mx-8 lg:mx-0 mb-8 block">
     <h2 className="mb-2 lg:mb-4 block capitalize whitespace-nowrap text-md lg:text-2xl font-semibold text-left">
       Set {label}
     </h2>
@@ -58,7 +58,7 @@ interface ColorPreviewProps {
 
 const ColorPreview = ({ textColor, backgroundColor }: ColorPreviewProps) => (
   <div
-    className="flex flex-col justify-center items-center mx-8 mb-4 lg:mb-0 lg:mx-0 md:order-3 md:w-full max-w-[600px] h-[200px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
+    className="flex flex-col justify-center items-center mx-2 lg:mx-0 mb-4 md:mb-0 md:order-3 w-full max-w-[600px] h-[200px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
     style={{ backgroundColor, color: textColor }}
   >
     <p className="text-center font-semibold text-2xl">Preview Window</p>
@@ -71,10 +71,13 @@ const ColorContrast = () => {
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
 
   return (
-    <section id="color-contrast" className="mt-8 lg:mt-12">
-      <div className="flex flex-col md:flex-row">
+    <section
+      id="color-contrast"
+      className="mt-8 lg:mt-12 max-w-[1200px] mx-auto"
+    >
+      <div className="flex flex-col md:flex-row justify-center items-center">
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
-        <div className="px-2 lg:mx-auto block lg:flex max-w-[800px] lg:justify-between">
+        <div className="block w-full max-w-[600px]">
           <ColorPicker
             id="textColor"
             label="Text color"
