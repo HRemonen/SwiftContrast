@@ -110,7 +110,7 @@ const calculateRGBsContrast = (text: string, background: string) => {
     (Math.max(luminanceText, luminanceBackground) + 0.05) /
     (Math.min(luminanceText, luminanceBackground) + 0.05);
 
-  return contrast;
+  return +contrast.toFixed(2);
 };
 
 const calculateWCAGConformance = (contrast: number) => {
@@ -135,7 +135,7 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
 
   return (
     <div>
-      <p>Contrast: {contrast}</p>
+      <p>Contrast: {contrast}:1</p>
     </div>
   );
 };
