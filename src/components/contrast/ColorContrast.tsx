@@ -137,64 +137,53 @@ const generateComplianceColor = (
   AAACompliant: boolean,
 ) => {
   if (AACompliant && AAACompliant) {
-    return "#81c784";
+    return { backgroundColor: "#bdffc0", color: "#005704" };
   }
 
   if (AACompliant) {
-    return "#ffb74d";
+    return { backgroundColor: "#fddeaf", color: "#6b3600" };
   }
 
-  return "#e57373";
+  return { backgroundColor: "#ffb3b3", color: "#6b0000" };
 };
 
 const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   const contrast = calculateRGBsContrast(textColor, backgroundColor);
   const conformance = calculateWCAGConformance(contrast);
 
+  const smallTextStyles = generateComplianceColor(
+    conformance.AA.normal,
+    conformance.AAA.normal,
+  );
+  const largeTextStyles = generateComplianceColor(
+    conformance.AA.large,
+    conformance.AAA.large,
+  );
+  const componentsStyles = generateComplianceColor(
+    conformance.AA.components,
+    conformance.AA.components,
+  );
+
   return (
     <div className="mx-2 lg:mx-0 md:pr-2 lg:pr-8">
       <p className="mb-2 lg:mb-4 capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
         Contrast Ratio: {contrast}:1
       </p>
-      <div
-        className="rounded-t-md px-2 py-1"
-        style={{
-          backgroundColor: generateComplianceColor(
-            conformance.AA.normal,
-            conformance.AAA.normal,
-          ),
-        }}
-      >
+      <div className="rounded-t-md p-2" style={{ ...smallTextStyles }}>
         <p className="capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
           Small Text 14pt / 18.5px
         </p>
         <p>AA: {conformance.AA.normal ? "Pass" : "Fail"}</p>
         <p>AAA: {conformance.AAA.normal ? "Pass" : "Fail"}</p>
       </div>
-      <div
-        className="px-2 py-1"
-        style={{
-          backgroundColor: generateComplianceColor(
-            conformance.AA.large,
-            conformance.AAA.large,
-          ),
-        }}
-      >
+      <div className="p-2" style={{ ...largeTextStyles }}>
         <p className="capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
           Large Text 18pt / 24px
         </p>
         <p>AA: {conformance.AA.large ? "Pass" : "Fail"}</p>
         <p>AAA: {conformance.AAA.large ? "Pass" : "Fail"}</p>
       </div>
-      <div
-        className="rounded-b-md px-2 py-1"
-        style={{
-          backgroundColor: generateComplianceColor(
-            conformance.AA.components,
-            conformance.AA.components,
-          ),
-        }}
-      >
+      <div className="rounded-b-md p-2" style={{ ...componentsStyles }}>
         <p className="capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
           UI Components
         </p>
