@@ -202,7 +202,7 @@ const ColorContrast = () => {
       id="color-contrast"
       className="mt-8 lg:mt-12 max-w-[1024px] mx-auto"
     >
-      <div className="flex flex-col md:flex-row justify-center items-center lg:justify-normal lg:items-start">
+      <div className="flex flex-col md:flex-row">
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
 
         <div className="w-full max-w-[600px]">
