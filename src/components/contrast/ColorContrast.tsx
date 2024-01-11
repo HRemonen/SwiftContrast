@@ -43,7 +43,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 };
 
 const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
-  <div className="mx-2 md:mx-8 lg:mx-0 mb-8 block">
+  <div className="mx-2 md:mx-8 lg:mx-0 mb-8">
     <h2 className="mb-2 lg:mb-4 block capitalize whitespace-nowrap text-md lg:text-2xl font-semibold text-left">
       Set {label}
     </h2>
@@ -77,7 +77,7 @@ const ColorContrast = () => {
     >
       <div className="flex flex-col md:flex-row justify-center items-center">
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
-        <div className="block w-full max-w-[600px]">
+        <div className="flex flex-col md:items-end md:pr-2 lg:pr-8 w-full max-w-[600px]">
           <ColorPicker
             id="textColor"
             label="Text color"
