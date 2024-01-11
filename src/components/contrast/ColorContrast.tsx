@@ -119,23 +119,78 @@ const calculateWCAGConformance = (contrast: number) => {
     AAA: { normal: 7.0, large: 4.5 },
   };
 
-  return Object.entries(thresholds).flatMap(([level, types]) =>
-    Object.entries(types).map(([type, threshold]) => ({
-      level: `${level} ${type}`,
-      passed: contrast >= threshold,
-    })),
-  );
+  return {
+    AA: {
+      normal: contrast >= thresholds.AA.normal,
+      large: contrast >= thresholds.AA.large,
+      components: contrast >= thresholds.AA.components,
+    },
+    AAA: {
+      normal: contrast >= thresholds.AAA.normal,
+      large: contrast >= thresholds.AAA.large,
+    },
+  };
+};
+
+const generateComplianceColor = (
+  AACompliant: boolean,
+  AAACompliant: boolean,
+) => {
+  if (AACompliant && AAACompliant) {
+    return "#81c784";
+  }
+
+  if (AACompliant) {
+    return "#ffb74d";
+  }
+
+  return "#e57373";
 };
 
 const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   const contrast = calculateRGBsContrast(textColor, backgroundColor);
   const conformance = calculateWCAGConformance(contrast);
 
-  console.log(conformance);
-
   return (
     <div>
-      <p>Contrast: {contrast}:1</p>
+      <p className="block capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
+        Contrast Ratio: {contrast}:1
+      </p>
+      <div
+        style={{
+          backgroundColor: generateComplianceColor(
+            conformance.AA.normal,
+            conformance.AAA.normal,
+          ),
+        }}
+      >
+        <p>Small Text 14pt / 18.5px</p>
+        <p>AA: {conformance.AA.normal ? "Pass" : "Fail"}</p>
+        <p>AAA: {conformance.AAA.normal ? "Pass" : "Fail"}</p>
+      </div>
+      <div
+        style={{
+          backgroundColor: generateComplianceColor(
+            conformance.AA.large,
+            conformance.AAA.large,
+          ),
+        }}
+      >
+        <p>Large Text 18pt / 24px</p>
+        <p>AA: {conformance.AA.large ? "Pass" : "Fail"}</p>
+        <p>AAA: {conformance.AAA.large ? "Pass" : "Fail"}</p>
+      </div>
+      <div
+        style={{
+          backgroundColor: generateComplianceColor(
+            conformance.AA.components,
+            conformance.AA.components,
+          ),
+        }}
+      >
+        <p>UI Components</p>
+        <p>AA: {conformance.AA.components ? "Pass" : "Fail"}</p>
+      </div>
     </div>
   );
 };
