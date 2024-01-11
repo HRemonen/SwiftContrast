@@ -51,20 +51,77 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
   </div>
 );
 
-interface ColorPreviewProps {
+interface Colors {
   textColor: string;
   backgroundColor: string;
 }
 
-const ColorPreview = ({ textColor, backgroundColor }: ColorPreviewProps) => (
+const ColorPreview = ({ textColor, backgroundColor }: Colors) => (
   <div
     className="flex flex-col justify-center items-center mx-2 lg:mx-0 mb-4 md:mb-0 md:order-3 w-full max-w-[600px] h-[200px] lg:h-[400px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
     style={{ backgroundColor, color: textColor }}
   >
-    <p className="text-center font-semibold text-2xl">Preview Window</p>
-    <p className="text-center font-semibold text-md">Text</p>
+    <p className="text-center font-semibold text-[18.5px]">
+      Small text 14pt / 18.5px
+    </p>
+    <p className="text-center font-semibold text-[24px]">
+      Large text 18pt / 24px
+    </p>
   </div>
 );
+
+const hexToRgb = (hex: string) => {
+  const hexValue = hex.replace("#", "");
+
+  const r = parseInt(hexValue.substring(0, 2), 16);
+  const g = parseInt(hexValue.substring(2, 4), 16);
+  const b = parseInt(hexValue.substring(4, 6), 16);
+
+  return { r, g, b };
+};
+
+const calculateLuminance = (rgb: { r: number; g: number; b: number }) => {
+  const { r, g, b } = rgb;
+
+  const rsrgb = r / 255;
+  const gsrgb = g / 255;
+  const bsrgb = b / 255;
+
+  const rL =
+    rsrgb <= 0.03928 ? rsrgb / 12.92 : ((rsrgb + 0.055) / 1.055) ** 2.4;
+  const gL =
+    gsrgb <= 0.03928 ? gsrgb / 12.92 : ((gsrgb + 0.055) / 1.055) ** 2.4;
+  const bL =
+    bsrgb <= 0.03928 ? bsrgb / 12.92 : ((bsrgb + 0.055) / 1.055) ** 2.4;
+
+  const luminance = 0.2126 * rL + 0.7152 * gL + 0.0722 * bL;
+
+  return luminance;
+};
+
+const calculateRGBsContrast = (text: string, background: string) => {
+  const rgbText = hexToRgb(text);
+  const rgbBackground = hexToRgb(background);
+
+  const luminanceText = calculateLuminance(rgbText);
+  const luminanceBackground = calculateLuminance(rgbBackground);
+
+  const contrast =
+    (Math.max(luminanceText, luminanceBackground) + 0.05) /
+    (Math.min(luminanceText, luminanceBackground) + 0.05);
+
+  return contrast;
+};
+
+const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
+  const contrast = calculateRGBsContrast(textColor, backgroundColor);
+
+  return (
+    <div>
+      <p>Contrast: {contrast}</p>
+    </div>
+  );
+};
 
 const ColorContrast = () => {
   const [textColor, setTextColor] = useState("#000000");
@@ -75,21 +132,29 @@ const ColorContrast = () => {
       id="color-contrast"
       className="mt-8 lg:mt-12 max-w-[1200px] mx-auto"
     >
-      <div className="flex flex-col md:flex-row justify-center items-center">
+      <div className="flex flex-col md:flex-row justify-center items-center lg:justify-normal lg:items-start">
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
-        <div className="flex flex-col lg:flex-row lg:space-x-8 md:items-end lg:items-start md:pr-2 lg:pr-8 w-full max-w-[600px]">
-          <ColorPicker
-            id="textColor"
-            label="Text color"
-            color={textColor}
-            onChange={setTextColor}
-          />
 
-          <ColorPicker
-            id="backgroundColor"
-            label="Background color"
-            color={backgroundColor}
-            onChange={setBackgroundColor}
+        <div className="w-full max-w-[600px]">
+          <div className="flex flex-col lg:flex-row lg:space-x-8 md:items-end lg:items-start md:pr-2 lg:pr-8 ">
+            <ColorPicker
+              id="textColor"
+              label="Text color"
+              color={textColor}
+              onChange={setTextColor}
+            />
+
+            <ColorPicker
+              id="backgroundColor"
+              label="Background color"
+              color={backgroundColor}
+              onChange={setBackgroundColor}
+            />
+          </div>
+
+          <ContrastChecker
+            textColor={textColor}
+            backgroundColor={backgroundColor}
           />
         </div>
       </div>
