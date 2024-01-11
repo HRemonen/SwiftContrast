@@ -152,11 +152,12 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   const conformance = calculateWCAGConformance(contrast);
 
   return (
-    <div>
-      <p className="block capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
+    <div className="mx-2 lg:mx-0 md:pr-2 lg:pr-8">
+      <p className="mb-2 lg:mb-4 capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
         Contrast Ratio: {contrast}:1
       </p>
       <div
+        className="rounded-t-md px-2 py-1"
         style={{
           backgroundColor: generateComplianceColor(
             conformance.AA.normal,
@@ -164,11 +165,14 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
           ),
         }}
       >
-        <p>Small Text 14pt / 18.5px</p>
+        <p className="capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
+          Small Text 14pt / 18.5px
+        </p>
         <p>AA: {conformance.AA.normal ? "Pass" : "Fail"}</p>
         <p>AAA: {conformance.AAA.normal ? "Pass" : "Fail"}</p>
       </div>
       <div
+        className="px-2 py-1"
         style={{
           backgroundColor: generateComplianceColor(
             conformance.AA.large,
@@ -176,11 +180,14 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
           ),
         }}
       >
-        <p>Large Text 18pt / 24px</p>
+        <p className="capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
+          Large Text 18pt / 24px
+        </p>
         <p>AA: {conformance.AA.large ? "Pass" : "Fail"}</p>
         <p>AAA: {conformance.AAA.large ? "Pass" : "Fail"}</p>
       </div>
       <div
+        className="rounded-b-md px-2 py-1"
         style={{
           backgroundColor: generateComplianceColor(
             conformance.AA.components,
@@ -188,7 +195,9 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
           ),
         }}
       >
-        <p>UI Components</p>
+        <p className="capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
+          UI Components
+        </p>
         <p>AA: {conformance.AA.components ? "Pass" : "Fail"}</p>
       </div>
     </div>
