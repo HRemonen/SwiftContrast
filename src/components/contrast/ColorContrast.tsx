@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { text } from "stream/consumers";
 
 interface ColorPickerProps {
   id: string;
@@ -50,26 +51,44 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
   </div>
 );
 
+interface ColorPreviewProps {
+  textColor: string;
+  backgroundColor: string;
+}
+
+const ColorPreview = ({ textColor, backgroundColor }: ColorPreviewProps) => (
+  <div
+    className="flex flex-col justify-center items-center mx-8 mb-4 lg:mb-0 lg:mx-0 lg:order-3 lg:p-4 lg:w-[400px] h-[200px] lg:h-[400px] border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
+    style={{ backgroundColor, color: textColor }}
+  >
+    <p className="text-center font-semibold text-2xl">Preview Window</p>
+    <p className="text-center font-semibold text-md">Text</p>
+  </div>
+);
+
 const ColorContrast = () => {
   const [textColor, setTextColor] = useState("#000000");
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
 
   return (
     <section id="color-contrast" className="mt-8 lg:mt-12">
-      <div className="px-2 lg:px-24 lg:mx-auto block lg:flex max-w-8xl items-center lg:justify-between">
-        <ColorPicker
-          id="textColor"
-          label="Text color"
-          color={textColor}
-          onChange={setTextColor}
-        />
+      <div className="flex flex-col lg:flex-row">
+        <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
+        <div className="px-2 lg:px-24 lg:mx-auto block lg:flex max-w-8xl lg:justify-between">
+          <ColorPicker
+            id="textColor"
+            label="Text color"
+            color={textColor}
+            onChange={setTextColor}
+          />
 
-        <ColorPicker
-          id="backgroundColor"
-          label="Background color"
-          color={backgroundColor}
-          onChange={setBackgroundColor}
-        />
+          <ColorPicker
+            id="backgroundColor"
+            label="Background color"
+            color={backgroundColor}
+            onChange={setBackgroundColor}
+          />
+        </div>
       </div>
     </section>
   );
