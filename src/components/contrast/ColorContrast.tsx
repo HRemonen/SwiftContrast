@@ -57,14 +57,14 @@ interface Colors {
 
 const ColorPreview = ({ textColor, backgroundColor }: Colors) => (
   <div
-    className="flex flex-col justify-center items-center mx-2 lg:mx-0 mb-4 md:mb-0 md:order-3 w-full max-w-[600px] h-full min-h-[200px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
+    className="flex flex-col justify-center items-center mx-2 lg:mx-0 mb-4 md:mb-0 md:order-3 w-full max-w-[600px] min-h-[200px] lg:p-4 border-solid border-[1px] border-gray-400 dark:border-0 rounded-md"
     style={{ backgroundColor, color: textColor }}
   >
-    <p className="text-center font-semibold text-[18.5px]">
-      Small text 14pt / 18.5px
-    </p>
-    <p className="text-center font-semibold text-[24px]">
+    <p className="text-center font-normal text-[24px]">
       Large text 18pt / 24px
+    </p>
+    <p className="text-center font-normal text-[18.5px]">
+      Small text 14pt / 18.5px
     </p>
   </div>
 );
