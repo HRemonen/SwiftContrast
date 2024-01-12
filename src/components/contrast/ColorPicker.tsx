@@ -9,8 +9,10 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
           {label} HEX
         </label>
         <input
-          className="h-10 p-2 mr-2 border-1 w-[100%] border-gray-300 rounded-md"
+          className="appearance-none h-10 p-2 mr-2 border-1 w-[100%] border-gray-300 rounded-md"
+          style={{ backgroundColor: "transparent", cursor: "pointer" }}
           id={textInputId}
+          placeholder="#000000"
           type="text"
           value={color}
           onChange={(e) => onChange(e.target.value)}
@@ -20,8 +22,10 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
           {label} picker
         </label>
         <input
-          className="w-10 h-10 border-1 border-gray-300 rounded-md"
+          className="w-10 h-10 "
+          style={{ backgroundColor: "transparent", cursor: "pointer" }}
           id={colorInputId}
+          placeholder="#ffffff"
           type="color"
           value={color}
           onChange={(e) => onChange(e.target.value)}
