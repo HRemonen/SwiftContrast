@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { text } from "stream/consumers";
 
 interface ColorPickerProps {
   id: string;
@@ -169,21 +168,21 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
       <p className="mb-2 lg:mb-4 capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
         Contrast Ratio: {contrast}:1
       </p>
-      <div className="rounded-t-md p-2" style={{ ...smallTextStyles }}>
+      <div className="rounded-t-md px-4 pt-4" style={{ ...smallTextStyles }}>
         <p className="capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
           Small Text 14pt / 18.5px
         </p>
         <p>AA: {conformance.AA.normal ? "Pass" : "Fail"}</p>
         <p>AAA: {conformance.AAA.normal ? "Pass" : "Fail"}</p>
       </div>
-      <div className="p-2" style={{ ...largeTextStyles }}>
+      <div className="px-4 py-4" style={{ ...largeTextStyles }}>
         <p className="capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
           Large Text 18pt / 24px
         </p>
         <p>AA: {conformance.AA.large ? "Pass" : "Fail"}</p>
         <p>AAA: {conformance.AAA.large ? "Pass" : "Fail"}</p>
       </div>
-      <div className="rounded-b-md p-2" style={{ ...componentsStyles }}>
+      <div className="rounded-b-md px-4 pb-4" style={{ ...componentsStyles }}>
         <p className="capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
           UI Components
         </p>
