@@ -22,7 +22,7 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   );
 
   return (
-    <div className="mx-2 lg:mx-0 lg:pr-8">
+    <div className="mx-2 lg:mx-0 lg:pr-8 divide-y-2 divide-solid">
       <p className="mb-2 lg:mb-4 capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
         Contrast Ratio: {contrast}:1
       </p>
