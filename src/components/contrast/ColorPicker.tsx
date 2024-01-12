@@ -1,10 +1,3 @@
-interface ColorPickerProps {
-  id: string;
-  label: string;
-  color: string;
-  onChange: (color: string) => void;
-}
-
 const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
   const textInputId = `${id}-hex-input`;
   const colorInputId = `${id}-picker-input`;
