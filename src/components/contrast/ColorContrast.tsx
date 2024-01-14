@@ -20,7 +20,7 @@ const ColorContrast = () => {
   return (
     <section
       id="color-contrast"
-      className="mt-8 lg:mt-12 max-w-[1024px] mx-auto"
+      className="mt-12 lg:mt-24 max-w-[1024px] mx-auto"
     >
       <div className="flex flex-col md:flex-row">
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
