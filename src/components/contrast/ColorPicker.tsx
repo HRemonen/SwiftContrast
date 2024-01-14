@@ -1,3 +1,5 @@
+import { IoCopyOutline } from "react-icons/io5";
+
 const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
   const textInputId = `${id}-hex-input`;
   const colorInputId = `${id}-picker-input`;
@@ -36,7 +38,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 };
 
 const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
-  <div className="mx-2 md:mx-2 lg:mx-0 mb-8">
+  <div className="mx-2 md:mx-2 lg:mx-0 mb-2 lg:mb-8">
     <h2 className="mb-2 lg:mb-4 block capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
       Set {label}
     </h2>
