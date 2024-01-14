@@ -23,6 +23,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
           type="text"
           value={color}
           onChange={(e) => onChange(e.target.value)}
+          onDoubleClick={handlePasteFromClipboard}
         />
 
         <label className="sr-only" htmlFor={colorInputId}>
