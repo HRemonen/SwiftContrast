@@ -36,7 +36,7 @@ const ColorContrast = () => {
 
             <div className="flex flex-col justify-center items-center">
               <button
-                className="flex items-center justify-center md:mr-2 lg:mr-0 md:mt-6 lg:mt-2 w-10 h-10 lg:w-[50px] lg:h-[50px] bg-gray-200 dark:bg-gray-800 rounded-md"
+                className="flex items-center justify-center md:mr-2 lg:mr-0 md:mt-6 lg:mt-3 w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md"
                 aria-label="Swap color values"
                 onClick={handleSwapColors}
               >
