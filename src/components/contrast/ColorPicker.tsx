@@ -19,9 +19,6 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
           value={color}
           onChange={(e) => onChange(e.target.value)}
         />
-        <div className="flex items-center mx-4 w-10 h-10">
-          <IoCopyOutline size={24} />
-        </div>
 
         <label className="sr-only" htmlFor={colorInputId}>
           {label} picker
@@ -42,9 +39,14 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 
 const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => (
   <div className="mx-2 md:mx-2 lg:mx-0 mb-2 lg:mb-8">
-    <h2 className="mb-2 lg:mb-4 block capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
-      Set {label}
-    </h2>
+    <div className="flex justify-between">
+      <h2 className="mb-2 lg:mb-4 block capitalize text-md lg:text-lg font-semibold text-left">
+        {label}
+      </h2>
+      <div className="mr-4">
+        <IoCopyOutline size={24} />
+      </div>
+    </div>
     <ColorPickerInput id={id} label={label} color={color} onChange={onChange} />
   </div>
 );
