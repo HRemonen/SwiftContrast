@@ -11,7 +11,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
           {label} HEX
         </label>
         <input
-          className="appearance-none h-10 p-2 mr-2 w-[100%] hover:border-2 border-gray-300 hover:border-blue-600 dark:hover:border-blue-300  rounded-md"
+          className="appearance-none h-10 p-2 mr-2 w-[100%] hover:border-2 border-gray-300 hover:border-blue-600 dark:hover:border-blue-300 rounded-md"
           style={{ backgroundColor: "transparent", cursor: "pointer" }}
           id={textInputId}
           placeholder="#000000"
@@ -19,12 +19,15 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
           value={color}
           onChange={(e) => onChange(e.target.value)}
         />
+        <div className="flex items-center mx-4 w-10 h-10">
+          <IoCopyOutline size={24} />
+        </div>
 
         <label className="sr-only" htmlFor={colorInputId}>
           {label} picker
         </label>
         <input
-          className="w-10 h-10 hover:border-2 hover:border-blue-600 dark:hover:border-blue-300 rounded-md"
+          className="min-w-10 min-h-10 hover:border-2 hover:border-blue-600 dark:hover:border-blue-300 rounded-md"
           style={{ backgroundColor: "transparent", cursor: "pointer" }}
           id={colorInputId}
           placeholder="#ffffff"
