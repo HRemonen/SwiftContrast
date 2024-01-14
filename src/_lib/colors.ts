@@ -20,11 +20,11 @@ export const calculateLuminance = (rgb: {
   const bsrgb = b / 255;
 
   const rL =
-    rsrgb <= 0.03928 ? rsrgb / 12.92 : ((rsrgb + 0.055) / 1.055) ** 2.4;
+    rsrgb <= 0.04045 ? rsrgb / 12.92 : ((rsrgb + 0.055) / 1.055) ** 2.4;
   const gL =
-    gsrgb <= 0.03928 ? gsrgb / 12.92 : ((gsrgb + 0.055) / 1.055) ** 2.4;
+    gsrgb <= 0.04045 ? gsrgb / 12.92 : ((gsrgb + 0.055) / 1.055) ** 2.4;
   const bL =
-    bsrgb <= 0.03928 ? bsrgb / 12.92 : ((bsrgb + 0.055) / 1.055) ** 2.4;
+    bsrgb <= 0.04045 ? bsrgb / 12.92 : ((bsrgb + 0.055) / 1.055) ** 2.4;
 
   const luminance = 0.2126 * rL + 0.7152 * gL + 0.0722 * bL;
 
