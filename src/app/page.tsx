@@ -1,4 +1,5 @@
 import ColorContrast from "@/components/contrast/ColorContrast";
+import ContrastExplanation from "@/components/contrast/ContrastExplanation";
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
       </h1>
 
       <ColorContrast />
+
+      <ContrastExplanation />
     </section>
   );
 }
