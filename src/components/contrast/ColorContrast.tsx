@@ -26,7 +26,7 @@ const ColorContrast = () => {
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
 
         <div className="w-full max-w-[600px]">
-          <div className="flex flex-col md:flex-row space-x-0 lg:space-x-4 md:pr-2 lg:pr-8 ">
+          <div className="flex flex-col md:flex-row lg:space-x-4 md:pr-2 lg:pr-8 ">
             <ColorPicker
               id="textColor"
               label="Text color"
@@ -36,7 +36,7 @@ const ColorContrast = () => {
 
             <div className="flex flex-col justify-center items-center">
               <button
-                className="flex items-center justify-center md:mr-2 lg:mr-0 md:mt-6 lg:mt-3 w-10 h-10 rounded-md border-solid border-[1px] dark:border-0 border-gray-400 hover:border-2 dark:hover:border-2 hover:border-blue-600 dark:hover:border-blue-300 dark:bg-gray-50 dark:bg-opacity-15"
+                className="flex items-center justify-center md:mt-6 lg:mt-3 w-10 h-10 rounded-md border-solid border-[1px] dark:border-0 border-gray-400 hover:border-2 dark:hover:border-2 hover:border-blue-600 dark:hover:border-blue-300 dark:bg-gray-50 dark:bg-opacity-15"
                 aria-label="Swap color values"
                 onClick={handleSwapColors}
               >
