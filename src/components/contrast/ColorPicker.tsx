@@ -6,12 +6,12 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex p-1 border-solid border-[1px] dark:border-0 w-full md:w-full lg:w-[250px] border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
+      <div className="flex p-1 w-full md:w-full lg:w-[250px] border-[1px] dark:border-0 border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
         <label className="sr-only" htmlFor={textInputId}>
           {label} HEX
         </label>
         <input
-          className="appearance-none h-10 p-2 mr-2 border-1 w-[100%] border-gray-300 rounded-md"
+          className="appearance-none h-10 p-2 mr-2 w-[100%] hover:border-2 border-gray-300 hover:border-blue-600 dark:hover:border-blue-300  rounded-md"
           style={{ backgroundColor: "transparent", cursor: "pointer" }}
           id={textInputId}
           placeholder="#000000"
@@ -24,7 +24,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
           {label} picker
         </label>
         <input
-          className="w-10 h-10 "
+          className="w-10 h-10 hover:border-2 hover:border-blue-600 dark:hover:border-blue-300 rounded-md"
           style={{ backgroundColor: "transparent", cursor: "pointer" }}
           id={colorInputId}
           placeholder="#ffffff"
