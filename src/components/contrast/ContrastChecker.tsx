@@ -1,3 +1,7 @@
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { IoInformationCircleOutline } from "react-icons/io5";
+
 import { calculateRGBsContrast } from "@/_lib/colors";
 import {
   calculateWCAGCompliance,
@@ -21,6 +25,26 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
     conformance.AA.components,
   );
 
+  const ComplianceIcon = ({
+    conformance,
+    explanation,
+  }: {
+    conformance: boolean;
+    explanation: string;
+  }) => {
+    return conformance ? (
+      <div className="flex space-x-2 items-center">
+        <IoCheckmarkCircleOutline size={24} className="text-green-500" />
+        <p>Pass {explanation}</p>
+      </div>
+    ) : (
+      <div className="flex space-x-2 items-center">
+        <IoCloseCircleOutline size={24} className="text-red-500" />
+        <p>Fail {explanation}</p>
+      </div>
+    );
+  };
+
   return (
     <div className="mx-2 lg:mx-0 lg:pr-8">
       <p className="mb-2 lg:mb-4 capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
@@ -34,10 +58,14 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
           </p>
         </div>
         <div className="my-2 px-4 text-sm md:flex justify-between">
-          <p>
-            {conformance.AA.normal ? "Pass" : "Fail"} (Small Text 14pt/18.67px)
-          </p>
-          <p>{conformance.AA.large ? "Pass" : "Fail"} (Large Text 18pt/24px)</p>
+          <ComplianceIcon
+            conformance={conformance.AA.normal}
+            explanation="(Small Text 14pt/18.67px)"
+          />
+          <ComplianceIcon
+            conformance={conformance.AA.large}
+            explanation="(Large Text 18pt/24px)"
+          />
         </div>
       </div>
 
@@ -48,12 +76,14 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
           </p>
         </div>
         <div className="my-2 px-4 text-sm md:flex justify-between">
-          <p>
-            {conformance.AAA.normal ? "Pass" : "Fail"} (Small Text 14pt/18.67px)
-          </p>
-          <p>
-            {conformance.AAA.large ? "Pass" : "Fail"} (Large Text 18pt/24px)
-          </p>
+          <ComplianceIcon
+            conformance={conformance.AAA.normal}
+            explanation="(Small Text 14pt/18.67px)"
+          />
+          <ComplianceIcon
+            conformance={conformance.AAA.large}
+            explanation="(Large Text 18pt/24px)"
+          />
         </div>
       </div>
 
@@ -64,10 +94,10 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
           </p>
         </div>
         <div className="my-2 px-4 text-sm">
-          <p>
-            {conformance.AA.components ? "Pass" : "Fail"} (UI Components and
-            Graphical Objects)
-          </p>
+          <ComplianceIcon
+            conformance={conformance.AA.components}
+            explanation="(UI Components and Graphical Objects)"
+          />
         </div>
       </div>
     </div>
