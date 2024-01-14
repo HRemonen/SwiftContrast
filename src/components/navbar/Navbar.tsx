@@ -3,20 +3,8 @@ import SkipLink from "../common/SkipLink";
 import DarkModeToggle from "../theme/DarkModeToggle";
 
 const Navbar = () => {
-  const NAV_ITEMS = [
-    {
-      name: "Home",
-      href: "/",
-    },
-    {
-      name: "About",
-      href: "/about",
-    },
-    {
-      name: "Tutorial",
-      href: "/tutorial",
-    },
-  ];
+  // This is for further possible development
+  const NAV_ITEMS: any[] = [];
 
   return (
     <header
