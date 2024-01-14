@@ -18,14 +18,14 @@ export const calculateWCAGCompliance = (contrast: number) => {
 };
 
 export const generateComplianceColor = (
-  AACompliant: boolean,
-  AAACompliant: boolean,
+  smallCompliant: boolean,
+  largeCompliant: boolean,
 ) => {
-  if (AACompliant && AAACompliant) {
+  if (smallCompliant && largeCompliant) {
     return { backgroundColor: "#bdffc0", color: "#005704" };
   }
 
-  if (AACompliant) {
+  if (largeCompliant || smallCompliant) {
     return { backgroundColor: "#fddeaf", color: "#6b3600" };
   }
 
