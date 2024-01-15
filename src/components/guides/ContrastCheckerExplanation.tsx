@@ -1,19 +1,12 @@
 import { generateComplianceColor } from "@/_lib/compliance";
 
-const ContrastExplanation = () => {
+const ContrastCheckerExplanation = () => {
   const successStyles = generateComplianceColor(true, true);
   const warningStyles = generateComplianceColor(true, false);
   const failureStyles = generateComplianceColor(false, false);
 
   return (
-    <section
-      id="explanation"
-      className="my-8 p-12 lg:p-0 lg:mt-24 max-w-[1024px] mx-auto"
-    >
-      <h2 className="text-xl lg:text-2xl font-semibold text-center">
-        Explanation
-      </h2>
-
+    <div id="explanation">
       <p className="mt-8">
         Input the text and background colors you want to compare in hexadecimal
         format (e.g. #000000 for black) or use the color picker to select
@@ -66,8 +59,8 @@ const ContrastExplanation = () => {
         </a>
         .
       </p>
-    </section>
+    </div>
   );
 };
 
-export default ContrastExplanation;
+export default ContrastCheckerExplanation;
