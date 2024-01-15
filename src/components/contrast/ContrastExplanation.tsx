@@ -8,7 +8,7 @@ const ContrastExplanation = () => {
   return (
     <section
       id="explanation"
-      className="mt-8 p-12 lg:p-0 lg:mt-24 max-w-[1024px] mx-auto"
+      className="my-8 p-12 lg:p-0 lg:mt-24 max-w-[1024px] mx-auto"
     >
       <h2 className="text-xl lg:text-2xl font-semibold text-center">
         Explanation
