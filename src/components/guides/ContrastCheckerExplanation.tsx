@@ -6,8 +6,8 @@ const ContrastCheckerExplanation = () => {
   const failureStyles = generateComplianceColor(false, false);
 
   return (
-    <div id="explanation">
-      <p className="mt-8">
+    <>
+      <p>
         Input the text and background colors you want to compare in hexadecimal
         format (e.g. #000000 for black) or use the color picker to select
         desired colors.
@@ -59,7 +59,7 @@ const ContrastCheckerExplanation = () => {
         </a>
         .
       </p>
-    </div>
+    </>
   );
 };
 
