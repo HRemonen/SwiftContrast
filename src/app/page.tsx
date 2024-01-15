@@ -1,5 +1,6 @@
 import ColorContrast from "@/components/contrast/ColorContrast";
-import ContrastExplanation from "@/components/contrast/ContrastExplanation";
+import ContrastExplanation from "@/components/guides/ContrastCheckerExplanation";
+import ContrastCheckerGuide from "@/components/guides/ContrastCheckerGuide";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
 
       <ColorContrast />
 
-      <ContrastExplanation />
+      <ContrastCheckerGuide />
     </section>
   );
 }
