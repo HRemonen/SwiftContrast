@@ -5,7 +5,7 @@ import ContrastCheckerUsage from "./ContrastCheckerUsage";
 const ContrastCheckerGuide = () => (
   <section
     id="accordion"
-    className="my-8 p-12 lg:p-0 lg:mt-24 max-w-[1024px] mx-auto"
+    className="mt-12 lg:mt-24 max-w-[600px] lg:max-w-[1024px] mx-auto"
   >
     <Accordion id="1" title="How to use this tool" expanded>
       <ContrastCheckerUsage />

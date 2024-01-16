@@ -22,7 +22,7 @@ const ColorContrast = () => {
       id="color-contrast"
       className="mt-12 lg:mt-24 max-w-[1024px] mx-auto"
     >
-      <div className="flex flex-col md:flex-row">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
 
         <div className="w-full max-w-[600px]">
