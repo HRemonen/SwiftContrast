@@ -17,17 +17,16 @@ const ContrastCheckerUsage = () => {
         clipboard for swift interaction.
       </p>
 
-      <p className="flex mt-8 items-center">
+      <p className="flex flex-wrap mt-8 items-center">
         <span className="mr-2">🔄</span>
         Use the <IoSwapHorizontal className="mx-1" size={20} /> button to swap
         the text and background colors.
       </p>
 
-      <p className="flex mt-8 items-center">
+      <p className="flex flex-wrap mt-8 items-center">
         <span className="mr-2">📋</span>
-        You can copy the color value to your clipboard by clicking the
-        <IoCopyOutline className="mx-1" size={20} />
-        button next to the input label.
+        Use the <IoCopyOutline className="mx-1" size={20} /> button to copy the
+        input value to clipboard.
       </p>
     </>
   );
