@@ -6,8 +6,8 @@ const ColorPreview = ({ textColor, backgroundColor }: Colors) => (
     <p className="text-center font-normal text-[24px]">
       Large text 18pt / 24px
     </p>
-    <p className="text-center font-normal text-[18.5px]">
-      Small text 14pt / 18.5px
+    <p className="text-center font-normal text-[18.5px] mt-2 lg:mt-4">
+      Small text 14pt / 18.67px
     </p>
   </div>
 );
