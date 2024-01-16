@@ -30,14 +30,3 @@ body {
   background-size: 32px 32px;
   opacity: 1;
 }
-
-.visually-hidden,
-.sr-only {
-  /* hides content except when viewed by screen readers */
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-}
