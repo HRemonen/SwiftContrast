@@ -51,7 +51,7 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => {
   return (
     <div className="mx-2 lg:mx-0 mb-2 lg:mb-8">
       <div className="flex justify-between items-start">
-        <h2 className="mb-2 lg:mb-4 block capitalize text-md lg:text-lg font-semibold text-left">
+        <h2 className="mb-2 lg:mb-4 capitalize text-md lg:text-lg font-semibold text-left">
           {label}
         </h2>
         <button
