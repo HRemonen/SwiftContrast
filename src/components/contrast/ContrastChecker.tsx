@@ -33,7 +33,7 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
     explanation: string;
   }) => {
     return conformance ? (
-      <div className="flex space-x-2 items-center">
+      <div className="flex space-x-2 items-center my-2 md:my-0">
         <IoCheckmarkCircleOutline size={24} className="text-green-500" />
         <p>Pass {explanation}</p>
       </div>
@@ -46,7 +46,7 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   };
 
   return (
-    <div className="mx-2 lg:mx-0 lg:pr-8">
+    <div className="mx-2 mt-8 md:mt-4 lg:mx-0 lg:pr-8">
       <p className="mb-2 lg:mb-4 capitalize whitespace-nowrap text-md lg:text-lg font-semibold text-left">
         Contrast Ratio: {contrast}:1
       </p>
