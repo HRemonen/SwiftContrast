@@ -9,7 +9,11 @@ const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
 
   const Icon =
-    theme === "light" ? <RiMoonLine size={24} /> : <RiSunLine size={24} />;
+    theme === "light" ? (
+      <RiMoonLine role="img" aria-hidden="true" focusable="false" size={24} />
+    ) : (
+      <RiSunLine role="img" aria-hidden="true" focusable="false" size={24} />
+    );
 
   return (
     <button
