@@ -34,12 +34,22 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   }) => {
     return conformance ? (
       <div className="flex space-x-2 items-center my-2 md:my-0">
-        <IoCheckmarkCircleOutline size={24} className="text-green-500" />
+        <IoCheckmarkCircleOutline
+          aria-hidden="true"
+          focusable="false"
+          size={24}
+          className="text-green-500"
+        />
         <p>Pass {explanation}</p>
       </div>
     ) : (
       <div className="flex space-x-2 items-center">
-        <IoCloseCircleOutline size={24} className="text-red-500" />
+        <IoCloseCircleOutline
+          aria-hidden="true"
+          focusable="false"
+          size={24}
+          className="text-red-500"
+        />
         <p>Fail {explanation}</p>
       </div>
     );
