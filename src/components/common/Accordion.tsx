@@ -26,7 +26,7 @@ const Accordion = ({
       <h2 id={`accordion-heading-${id}`}>
         <button
           type="button"
-          className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+          className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-600 border border-gray-200 dark:border-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
           aria-label={`Toggle '${title}' section`}
           aria-expanded={expandedBody}
           onClick={() => setExpandedBody(!expandedBody)}

@@ -26,7 +26,7 @@ const ColorContrast = () => {
         <ColorPreview textColor={textColor} backgroundColor={backgroundColor} />
 
         <div className="w-full max-w-[600px]">
-          <div className="flex flex-col md:flex-row lg:space-x-4 md:pr-2 lg:pr-8 ">
+          <div className="flex flex-col lg:flex-row lg:space-x-2 md:pr-2 lg:pr-8 ">
             <ColorPicker
               id="textColor"
               label="Text color"

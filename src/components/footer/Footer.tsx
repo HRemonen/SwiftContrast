@@ -7,14 +7,14 @@ const Footer = () => (
         <div className="w-3/4">
           <Link
             href="https://swiftcontrast.com/"
-            className="self-center text-2xl font-semibold whitespace-nowrap underline dark:text-white focus:text-blue-500 dark:focus:text-blue-500 hover:text-blue-500 dark:hover:text-blue-300"
+            className="self-center text-2xl font-semibold whitespace-nowrap underline dark:text-white focus:text-blue-300 dark:focus:text-blue-600 hover:text-blue-600 dark:hover:text-blue-300"
           >
             Swift Contrast
           </Link>
         </div>
         <div className="flex flex-wrap justify-end w-1/4 border-l-[1px] pl-16 text-sm font-medium border-gray-200 dark:border-gray-700 text-gray-500 sm:mb-0 dark:text-gray-400">
           <Link
-            className="dark:fill-white focus:fill-blue-500 dark:focus:fill-blue-500 hover:fill-blue-500 dark:hover:fill-blue-300"
+            className="dark:fill-white focus:fill-blue-500 dark:focus:fill-blue-600 hover:fill-blue-600 dark:hover:fill-blue-300"
             href="https://github.com/HRemonen/SwiftContrast"
             target="_blank"
             rel="nofollow noopener noreferrer sponsored"
@@ -35,7 +35,7 @@ const Footer = () => (
         </div>
       </div>
       <hr className="my-2 border-gray-200 dark:border-gray-700 lg:my-4" />
-      <span className="block text-xs uppercase text-gray-500 dark:text-gray-400">
+      <span className="block text-xs uppercase text-gray-500 dark:text-gray-300">
         All Rights Reserved © Henri Remonen 2024
       </span>
     </div>
