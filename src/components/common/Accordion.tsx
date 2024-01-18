@@ -33,13 +33,25 @@ const Accordion = ({
           onClick={() => setExpandedBody(!expandedBody)}
         >
           <span className="flex items-center">
-            <IoInformationCircleOutline aria-hidden="true" size={24} />
+            <IoInformationCircleOutline
+              aria-hidden="true"
+              focusable="false"
+              size={24}
+            />
             <span className="ml-2">{title}</span>
           </span>
           {expandedBody ? (
-            <IoArrowUpCircleOutline aria-hidden="true" size={24} />
+            <IoArrowUpCircleOutline
+              aria-hidden="true"
+              focusable="false"
+              size={24}
+            />
           ) : (
-            <IoArrowDownCircleOutline aria-hidden="true" size={24} />
+            <IoArrowDownCircleOutline
+              aria-hidden="true"
+              focusable="false"
+              size={24}
+            />
           )}
         </button>
       </h2>

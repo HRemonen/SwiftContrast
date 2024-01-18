@@ -58,7 +58,7 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => {
           className="mr-4 md:mr-3 hover:cursor-pointer hover:text-blue-600 dark:hover:text-blue-300"
           onClick={handleCopyToClipboard}
         >
-          <IoCopyOutline aria-hidden="true" size={24} />
+          <IoCopyOutline aria-hidden="true" focusable="false" size={24} />
           <span className="sr-only">Copy</span>
         </button>
       </div>
