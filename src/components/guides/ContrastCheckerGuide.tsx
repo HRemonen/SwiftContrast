@@ -7,11 +7,11 @@ const ContrastCheckerGuide = () => (
     id="accordion"
     className="my-12 lg:mt-24 max-w-[600px] md:max-w-[1024px] mx-auto"
   >
-    <Accordion id="1" title="How to use this tool" expanded>
+    <Accordion id="accordion-group-1" title="How to use this tool" expanded>
       <ContrastCheckerUsage />
     </Accordion>
 
-    <Accordion id="2" title="Explanation">
+    <Accordion id="accordion-group-2" title="Explanation">
       <ContrastCheckerExplanation />
     </Accordion>
   </section>

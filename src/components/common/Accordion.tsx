@@ -22,12 +22,12 @@ const Accordion = ({
   const [expandedBody, setExpandedBody] = useState(expanded);
 
   return (
-    <div id={`accordion-group-${id}`}>
+    <div id={id}>
       <h2>
         <button
-          id={`accordion-heading-${id}`}
+          id={`${id}-heading`}
           type="button"
-          aria-controls={`accordion-body-${id}`}
+          aria-controls={`${id}-body`}
           aria-expanded={expandedBody}
           className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-600 border border-gray-200 dark:border-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
           onClick={() => setExpandedBody(!expandedBody)}
@@ -56,10 +56,10 @@ const Accordion = ({
         </button>
       </h2>
       <div
-        id={`accordion-body-${id}`}
+        id={`${id}-body`}
         role="region"
         aria-hidden={!expandedBody}
-        aria-labelledby={`accordion-heading-${id}`}
+        aria-labelledby={`${id}-heading`}
         className={`${expandedBody ? "block" : "hidden"}`}
       >
         <div className="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900">
