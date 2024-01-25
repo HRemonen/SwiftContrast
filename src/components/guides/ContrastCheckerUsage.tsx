@@ -11,12 +11,6 @@ const ContrastCheckerUsage = () => {
         select desired colors.
       </p>
 
-      <p className="mt-8">
-        <span className="mr-2">🚀</span>
-        Double-click the hex input field to paste the color value from your
-        clipboard for swift interaction.
-      </p>
-
       <p className="flex flex-wrap mt-8 items-center">
         <span className="mr-2">🔄</span>
         Use the{" "}
