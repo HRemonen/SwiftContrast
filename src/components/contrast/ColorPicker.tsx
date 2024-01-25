@@ -4,11 +4,6 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
   const textInputId = `${id}-hex-input`;
   const colorInputId = `${id}-picker-input`;
 
-  const handlePasteFromClipboard = async () => {
-    const clipboardText = await navigator.clipboard.readText();
-    onChange(clipboardText);
-  };
-
   return (
     <div className="flex flex-col">
       <div className="flex p-1 w-full md:w-full border-[1px] dark:border-0 border-gray-400 dark:bg-gray-50 dark:bg-opacity-15 rounded-md">
@@ -23,7 +18,6 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
           type="text"
           value={color}
           onChange={(e) => onChange(e.target.value)}
-          onDoubleClick={handlePasteFromClipboard}
         />
 
         <label className="sr-only" htmlFor={colorInputId}>
