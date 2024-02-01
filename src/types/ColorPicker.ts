@@ -1,4 +1,4 @@
-interface ColorPickerProps {
+export interface ColorPickerProps {
   id: string;
   label: string;
   color: string;

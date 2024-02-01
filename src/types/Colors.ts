@@ -1,4 +1,4 @@
-interface Colors {
+export interface Colors {
   textColor: string;
   backgroundColor: string;
 }
