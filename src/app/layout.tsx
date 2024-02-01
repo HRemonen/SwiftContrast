@@ -14,22 +14,23 @@ export const metadata: Metadata = {
     "A lightweight color picker with real-time WCAG contrast analysis for accessible and inclusive design decisions.",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: {
   children: React.ReactNode;
-}) {
-  return (
-    <html className="dark" lang="en" style={{ colorScheme: "dark" }}>
-      <body className={inter.className}>
-        <DarkModeProvider>
-          <Navbar />
-          <main id="main" className="p-2">
-            {children}
-          </main>
-          <Footer />
-        </DarkModeProvider>
-      </body>
-    </html>
-  );
-}
+}) =>
+  (
+  <html className="dark" lang="en" style={{ colorScheme: "dark" }}>
+    <body className={inter.className}>
+      <DarkModeProvider>
+        <Navbar />
+        <main id="main" className="p-2">
+          {children}
+        </main>
+        <Footer />
+      </DarkModeProvider>
+    </body>
+  </html>
+);
+
+export default RootLayout;

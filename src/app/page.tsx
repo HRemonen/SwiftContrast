@@ -1,17 +1,17 @@
 import ColorContrast from "@/components/contrast/ColorContrast";
 import ContrastCheckerGuide from "@/components/guides/ContrastCheckerGuide";
 
-export default function Home() {
-  return (
-    <section id="home">
-      <title>Swift Contrast - WCAG Contrast Checker</title>
-      <h1 className="block whitespace-nowrap text-xl lg:text-3xl font-semibold text-center">
-        Swift Contrast
-      </h1>
+const Home = () => (
+  <section id="home">
+    <title>Swift Contrast - WCAG Contrast Checker</title>
+    <h1 className="block whitespace-nowrap text-xl lg:text-3xl font-semibold text-center">
+      Swift Contrast
+    </h1>
 
-      <ColorContrast />
+    <ColorContrast /> 
+    
+    <ContrastCheckerGuide />
+  </section>
+);
 
-      <ContrastCheckerGuide />
-    </section>
-  );
-}
+export default Home;
