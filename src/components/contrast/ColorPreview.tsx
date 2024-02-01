@@ -1,5 +1,6 @@
-import { IoAccessibility } from "react-icons/io5";
-import { IoAccessibilityOutline } from "react-icons/io5";
+import { IoAccessibility, IoAccessibilityOutline} from "react-icons/io5";
+
+import { Colors } from "@/types/Colors";
 
 const ColorPreview = ({ textColor, backgroundColor }: Colors) => (
   <div
@@ -20,6 +21,7 @@ const ColorPreview = ({ textColor, backgroundColor }: Colors) => (
       <IoAccessibility size={24} />
       <IoAccessibilityOutline size={24} />
       <button
+        type="button"
         tabIndex={-1}
         style={{ border: "solid", borderWidth: "1px" }}
         className="bg-transparent py-1 px-2 rounded cursor-default"

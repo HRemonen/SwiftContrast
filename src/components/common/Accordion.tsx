@@ -2,9 +2,7 @@
 
 import React, { useState } from "react";
 
-import { IoInformationCircleOutline } from "react-icons/io5";
-import { IoArrowDownCircleOutline } from "react-icons/io5";
-import { IoArrowUpCircleOutline } from "react-icons/io5";
+import { IoInformationCircleOutline, IoArrowUpCircleOutline, IoArrowDownCircleOutline } from "react-icons/io5";
 
 interface AccordionProps {
   id: string;

@@ -1,5 +1,7 @@
 import { IoCopyOutline } from "react-icons/io5";
 
+import { ColorPickerProps } from "@/types/ColorPicker";
+
 import ColorPickerInput from "./ColorPickerInput";
 
 const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => {
@@ -14,6 +16,7 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => {
           {label}
         </h2>
         <button
+          type="button"
           className="mr-4 md:mr-3 hover:cursor-pointer hover:text-blue-600 dark:hover:text-blue-300"
           onClick={handleCopyToClipboard}
         >

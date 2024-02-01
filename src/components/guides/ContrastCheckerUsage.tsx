@@ -1,8 +1,6 @@
-import { IoSwapHorizontal } from "react-icons/io5";
-import { IoCopyOutline } from "react-icons/io5";
+import { IoSwapHorizontal , IoCopyOutline } from "react-icons/io5";
 
-const ContrastCheckerUsage = () => {
-  return (
+const ContrastCheckerUsage = () => (
     <>
       <p>
         <span className="mr-2">🎨</span>
@@ -31,6 +29,5 @@ const ContrastCheckerUsage = () => {
       </p>
     </>
   );
-};
 
 export default ContrastCheckerUsage;
