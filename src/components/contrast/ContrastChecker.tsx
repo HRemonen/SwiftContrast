@@ -8,6 +8,36 @@ import {
   generateComplianceColor,
 } from "@/_lib/compliance";
 
+const ComplianceIcon = ({
+  conformance,
+  explanation,
+}: {
+  conformance: boolean;
+  explanation: string;
+}) => {
+  return conformance ? (
+    <div className="flex space-x-2 items-center my-2 md:my-0">
+      <IoCheckmarkCircleOutline
+        aria-hidden="true"
+        focusable="false"
+        size={24}
+        className="text-green-500"
+      />
+      <p>Pass {explanation}</p>
+    </div>
+  ) : (
+    <div className="flex space-x-2 items-center">
+      <IoCloseCircleOutline
+        aria-hidden="true"
+        focusable="false"
+        size={24}
+        className="text-red-500"
+      />
+      <p>Fail {explanation}</p>
+    </div>
+  );
+};
+
 const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   const contrast = calculateRGBsContrast(textColor, backgroundColor);
   const conformance = calculateWCAGCompliance(contrast);
@@ -24,36 +54,6 @@ const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
     conformance.AA.components,
     conformance.AA.components,
   );
-
-  const ComplianceIcon = ({
-    conformance,
-    explanation,
-  }: {
-    conformance: boolean;
-    explanation: string;
-  }) => {
-    return conformance ? (
-      <div className="flex space-x-2 items-center my-2 md:my-0">
-        <IoCheckmarkCircleOutline
-          aria-hidden="true"
-          focusable="false"
-          size={24}
-          className="text-green-500"
-        />
-        <p>Pass {explanation}</p>
-      </div>
-    ) : (
-      <div className="flex space-x-2 items-center">
-        <IoCloseCircleOutline
-          aria-hidden="true"
-          focusable="false"
-          size={24}
-          className="text-red-500"
-        />
-        <p>Fail {explanation}</p>
-      </div>
-    );
-  };
 
   return (
     <div className="mx-2 mt-8 md:mt-4 lg:mx-0 lg:pr-8">
