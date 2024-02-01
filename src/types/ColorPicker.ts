@@ -1,6 +1,6 @@
 export interface ColorPickerProps {
-  id: string;
-  label: string;
-  color: string;
-  onChange: (color: string) => void;
+  id: string
+  label: string
+  color: string
+  onChange: (color: string) => void
 }

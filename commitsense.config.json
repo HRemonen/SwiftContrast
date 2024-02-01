@@ -12,8 +12,6 @@
     "chore",
     "revert"
   ],
-  "skip_ci_types": [
-    "docs"
-  ],
+  "skip_ci_types": ["docs"],
   "version": 1
 }

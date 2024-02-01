@@ -1,17 +1,19 @@
-import type { Config } from "tailwindcss";
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
+import type { Config } from 'tailwindcss'
 
 /** @type {import('tailwindcss').Config} */
 
 const config: Config = {
-  darkMode: "class",
+  darkMode: 'class',
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography")],
-};
-export default config;
+  plugins: [require('@tailwindcss/typography')],
+}
+export default config
