@@ -1,6 +1,4 @@
-import { IoCheckmarkCircleOutline } from "react-icons/io5";
-import { IoCloseCircleOutline } from "react-icons/io5";
-import { IoInformationCircleOutline } from "react-icons/io5";
+import { IoCheckmarkCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 
 import { calculateRGBsContrast } from "@/_lib/colors";
 import {
@@ -8,14 +6,15 @@ import {
   generateComplianceColor,
 } from "@/_lib/compliance";
 
+import { Colors } from "@/types/Colors";
+
 const ComplianceIcon = ({
   conformance,
   explanation,
 }: {
   conformance: boolean;
   explanation: string;
-}) => {
-  return conformance ? (
+}) => conformance ? (
     <div className="flex space-x-2 items-center my-2 md:my-0">
       <IoCheckmarkCircleOutline
         aria-hidden="true"
@@ -36,7 +35,6 @@ const ComplianceIcon = ({
       <p>Fail {explanation}</p>
     </div>
   );
-};
 
 const ContrastChecker = ({ textColor, backgroundColor }: Colors) => {
   const contrast = calculateRGBsContrast(textColor, backgroundColor);

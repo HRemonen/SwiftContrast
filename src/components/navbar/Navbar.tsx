@@ -4,6 +4,7 @@ import DarkModeToggle from "../theme/DarkModeToggle";
 
 const Navbar = () => {
   // This is for further possible development
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const NAV_ITEMS: any[] = [];
 
   return (

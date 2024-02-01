@@ -7,12 +7,10 @@ type ProviderProps = {
   children?: React.ReactNode;
 };
 
-const DarkModeProvider = ({ children }: ProviderProps) => {
-  return (
+const DarkModeProvider = ({ children }: ProviderProps) => (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
     </ThemeProvider>
   );
-};
 
 export default DarkModeProvider;
