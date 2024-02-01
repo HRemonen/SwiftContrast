@@ -1,5 +1,4 @@
 import ColorContrast from "@/components/contrast/ColorContrast";
-import ContrastExplanation from "@/components/guides/ContrastCheckerExplanation";
 import ContrastCheckerGuide from "@/components/guides/ContrastCheckerGuide";
 
 export default function Home() {
