@@ -3,26 +3,39 @@
 import React from 'react'
 import { useTheme } from 'next-themes'
 
-import { RiMoonLine, RiSunLine } from 'react-icons/ri'
-
 const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme()
-
-  const Icon =
-    theme === 'light' ? (
-      <RiMoonLine role='img' aria-hidden='true' focusable='false' size={24} />
-    ) : (
-      <RiSunLine role='img' aria-hidden='true' focusable='false' size={24} />
-    )
-
+  
   return (
     <button
       type='button'
       aria-label={theme === 'dark' ? 'Toggle light mode' : 'Toggle dark mode'}
-      className='inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border-2 border-orange-400 p-1 transition hover:border-orange-200 focus:border-orange-200 focus:outline-none dark:border-cyan-200 dark:hover:border-cyan-400 dark:focus:border-cyan-400 md:h-12 md:w-12 lg:h-14 lg:w-14'
+      className='flex flex-col justify-center ml-3'
       onClick={() => (theme === 'dark' ? setTheme('light') : setTheme('dark'))}
     >
-      {Icon}
+      {theme === 'light' ? (
+          <svg
+            aria-hidden="true"
+            tabIndex={-1}
+            className="group w-10 h-10 fill-current transition-colors duration-300 ease-in-out hover:animate-spin-xslow"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+          >
+            <path className="text-yellow-300" d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z" />
+            <path className="text-yellow-300 group-hover:text-yellow-400" d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z" />
+          </svg>
+        ) : (
+          <svg
+            aria-hidden="true"
+            tabIndex={-1}
+            className="group w-10 h-10 fill-current transition duration-500 ease-in-out hover:rotate-12"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+          >
+            <path className="text-stone-200 group-hover:text-stone-400" d="M6.2 1C3.2 1.8 1 4.6 1 7.9 1 11.8 4.2 15 8.1 15c3.3 0 6-2.2 6.9-5.2C9.7 11.2 4.8 6.3 6.2 1Z" />
+            <path className='text-yellow-500 group-hover:animate-pulse' d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z" />
+          </svg>
+        )}
     </button>
   )
 }
