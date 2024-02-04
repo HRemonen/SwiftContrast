@@ -30,6 +30,7 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => {
         color={color}
         onChange={onChange}
       />
+      <span className='hidden peer-has-[input:invalid]:block text-red-500 dark:text-red-200 text-sm mt-2'>Please input correct HEX value</span>
     </div>
   )
 }

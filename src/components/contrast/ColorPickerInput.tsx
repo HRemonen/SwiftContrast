@@ -5,7 +5,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
   const colorInputId = `${id}-picker-input`
 
   return (
-    <div className='flex flex-col'>
+    <div className='peer flex flex-col'>
       <div className='flex w-full rounded-md border-[1px] border-gray-400 p-1 dark:border-0 dark:bg-gray-50 dark:bg-opacity-15 md:w-full has-[input:invalid]:border-red-500 dark:has-[input:invalid]:border-[1px] dark:has-[input:invalid]:border-red-200'>
         <label className='sr-only' htmlFor={textInputId}>
           {label} HEX
