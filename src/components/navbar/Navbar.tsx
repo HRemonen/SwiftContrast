@@ -1,6 +1,10 @@
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import SkipLink from '../common/SkipLink'
-import DarkModeToggle from '../theme/DarkModeToggle'
+
+const DarkModeToggle = dynamic(() => import('../theme/DarkModeToggle'), {
+  ssr: false,
+})
 
 const Navbar = () => {
   // This is for further possible development
