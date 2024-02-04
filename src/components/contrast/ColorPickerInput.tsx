@@ -1,3 +1,5 @@
+import { ColorPickerProps } from "@/types/ColorPicker"
+
 const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
   const textInputId = `${id}-hex-input`
   const colorInputId = `${id}-picker-input`
