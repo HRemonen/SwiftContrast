@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
-  <html className='dark' lang='en' style={{ colorScheme: 'dark' }}>
+  <html lang='en' suppressHydrationWarning>
     <body className={inter.className}>
       <DarkModeProvider>
         <Navbar />
