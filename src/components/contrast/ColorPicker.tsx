@@ -10,7 +10,7 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => {
   }
 
   return (
-    <div className='mx-2 mb-2 lg:mx-0 lg:mb-8'>
+    <div className='relative mx-2 mb-2 lg:mx-0 lg:mb-8'>
       <div className='flex items-start justify-between'>
         <h2 className='text-md mb-2 text-left font-semibold capitalize lg:mb-4 lg:text-lg'>
           {label}
@@ -30,7 +30,7 @@ const ColorPicker = ({ id, label, color, onChange }: ColorPickerProps) => {
         color={color}
         onChange={onChange}
       />
-      <span className='hidden peer-has-[input:invalid]:block text-red-500 dark:text-red-200 text-sm mt-2'>Please input correct HEX value</span>
+      <span className='hidden peer-has-[input:invalid]:block absolute bottom-[-4] text-red-500 dark:text-red-200 text-sm lg:mt-2'>Please input correct HEX value</span>
     </div>
   )
 }
