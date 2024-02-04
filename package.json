@@ -12,7 +12,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "husky": "^8.0.3",
@@ -42,8 +41,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
     "postcss": "^8",
-    "prettier": "^3.2.4",
-    "prettier-plugin-tailwind": "^2.2.12",
+    "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
