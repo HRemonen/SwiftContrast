@@ -21,7 +21,6 @@ const Footer = () => (
             aria-label='GitHub repository'
           >
             <svg
-              role='img'
               className='octicon octicon-mark-github'
               data-view-component='true'
               width='24'
