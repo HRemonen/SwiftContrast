@@ -11,7 +11,7 @@ const ColorPickerInput = ({ id, label, color, onChange }: ColorPickerProps) => {
           {label} HEX
         </label>
         <input
-          className='mr-2 h-10 w-[100%] appearance-none rounded-md border-gray-300 p-2 invalid:text-red-500 hover:border-2 hover:border-blue-600 dark:invalid:text-red-200 dark:hover:border-blue-300'
+          className='mr-2 h-10 w-[100%] appearance-none rounded-md border-2 border-transparent p-2 invalid:text-red-500 hover:border-2 hover:border-blue-600 dark:invalid:text-red-200 dark:hover:border-blue-300'
           style={{ backgroundColor: 'transparent' }}
           id={textInputId}
           type='text'
