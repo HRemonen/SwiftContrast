@@ -57,9 +57,8 @@ const Accordion = ({
           )}
         </button>
       </h2>
-      <div
+      <section
         id={`${id}-body`}
-        role='region'
         aria-hidden={!expandedBody}
         aria-labelledby={`${id}-heading`}
         className={`${expandedBody ? 'block' : 'hidden'}`}
@@ -67,7 +66,7 @@ const Accordion = ({
         <div className='border border-gray-200 p-5 dark:border-gray-700 dark:bg-gray-900'>
           {children}
         </div>
-      </div>
+      </section>
     </div>
   )
 }
