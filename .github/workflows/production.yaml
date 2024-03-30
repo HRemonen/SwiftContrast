@@ -8,8 +8,12 @@ on:
     types: [published]
 
 jobs:
+  Analysis:
+    uses: ./.github/workflows/static-analysis.yaml
+
   Deploy-Production:
     runs-on: ubuntu-latest
+    needs: Analysis
     steps:
       - uses: actions/checkout@v3
       - name: Install Vercel CLI

@@ -1,0 +1,15 @@
+name: Static analysis
+
+on: [workflow_call]
+
+jobs:
+  Run-Analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build project for eslint
+        run: npm install
+      - name: Run eslint
+        run: npm run lint
+      - name: Run prettier
+        run: npm run format
