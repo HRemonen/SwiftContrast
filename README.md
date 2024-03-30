@@ -1,6 +1,10 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=HRemonen_SwiftContrast&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=HRemonen_SwiftContrast)
 
-Web tool for checking color contrast ratios and WCAG guideline compliance.
+[![Production Tag Deployment](https://github.com/HRemonen/SwiftContrast/actions/workflows/production.yaml/badge.svg)](https://github.com/HRemonen/SwiftContrast/actions/workflows/production.yaml)
+
+[![Vercel Staging Deployment](https://github.com/HRemonen/SwiftContrast/actions/workflows/staging.yaml/badge.svg)](https://github.com/HRemonen/SwiftContrast/actions/workflows/staging.yaml)
+
+SwiftContrast: Color picker with instant WCAG contrast compliance analysis for accessible design.
 
 ## Getting Started
 
