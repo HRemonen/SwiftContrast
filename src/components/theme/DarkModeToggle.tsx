@@ -13,14 +13,10 @@ const DarkModeToggle = () => {
     <button
       type='button'
       aria-label={theme === 'light' ? 'Toggle dark mode' : 'Toggle light mode'}
-      className='flex flex-col justify-center ml-3'
+      className='ml-3 flex flex-col justify-center'
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      {theme === 'light' ? (
-        <SunIcon />
-      ) : (
-        <MoonIcon />
-      )}
+      {theme === 'light' ? <SunIcon /> : <MoonIcon />}
     </button>
   )
 }
