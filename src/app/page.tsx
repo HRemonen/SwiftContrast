@@ -5,7 +5,7 @@ const Home = () => (
   <section id='home'>
     <title>Swift Contrast - WCAG Contrast Checker</title>
     <h1 className='block whitespace-nowrap text-center text-xl font-semibold lg:text-3xl'>
-      Swift Contrast
+      Contrast Tool
     </h1>
 
     <ColorContrast />
