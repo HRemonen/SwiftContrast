@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 
 import DarkModeProvider from '@/components/theme/DarkModeProvider'
 import Navbar from '@/components/navbar/Navbar'
@@ -21,6 +22,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
         <Navbar />
         <main id='main' className='p-2'>
           {children}
+          <Analytics />
         </main>
         <Footer />
       </DarkModeProvider>
