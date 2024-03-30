@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=HRemonen_SwiftContrast&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=HRemonen_SwiftContrast)
+
+Web tool for checking color contrast ratios and WCAG guideline compliance.
 
 ## Getting Started
 
@@ -16,21 +18,22 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment Process
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This application is deployed using Vercel and updates are managed through GitHub releases, following semantic versioning principles.
 
-## Learn More
+**Steps for Deployment:**
 
-To learn more about Next.js, take a look at the following resources:
+1. **Development**: Develop new features or fixes locally.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Semantic Versioning**: Increment the version number according to semantic versioning principles (X.Y.Z).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **GitHub Release**: Create a new release on GitHub with the incremented version number.
 
-## Deploy on Vercel
+4. **CI/CD Pipeline**: Upon new release, the CI/CD pipeline is triggered.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. **Deployment**: The [`Deploy-Production`](.github/workflows/production.yaml) job is executed in the CI/CD pipeline. This job performs the following steps:
+   - Installs the Vercel CLI.
+   - Pulls Vercel environment information.
+   - Builds project artifacts.
+   - Deploys project artifacts to Vercel.
